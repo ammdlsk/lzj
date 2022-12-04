@@ -1,0 +1,139 @@
+<html>
+ <head></head>
+ <body>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>死亡计时器</title>
+  <script src="js/jq.js"></script>
+  <style>
+  body{
+    background-color:Black;
+    }
+  h1{
+    font-size:25px;
+    text-align:center;
+    color:white;
+    }
+  h2{
+   color:red;
+   font-size:25px;
+   text-align:center;
+    }
+  h3{
+    color:red;
+   font-size:25px;
+   text-align:center;
+    }
+  h4{
+    color:red;
+   font-size:25px;
+   text-align:center;
+    }
+  h5{
+    color:red;
+   font-size:25px;
+   text-align:center;
+    }
+  h6{
+    color:red;
+   font-size:25px;
+   text-align:center;
+    }
+  p{
+    color:grey;
+    font-size:1px;
+    }
+    
+  
+  </style>
+  
+  <h1 id="v2">死亡计时器</h1> <br>
+  <h2>年</h2>
+  <h3>天</h3>
+  <h4>时</h4>
+  <h5>分</h5>
+  <h6>秒</h6>
+  <p><i> 刘志杰制作 </i></p><br> 
+  <img src="死亡倒计时.png">
+  
+  <script>
+  
+  let second = document.querySelector("h6")
+  let branch = document.querySelector("h5")
+  let Hour = document.querySelector("h4")
+  let day = document.querySelector("h3")
+  let year = document.querySelector("h2")
+  
+  let m = Math.round(Math.random() * 60)    //随机数字
+  let m1 = Math.round(Math.random() * 60)    //随机数字
+  let s = Math.round(Math.random() * 24)    //随机数字
+  let t = Math.round(Math.random() * 365)    //随机数字
+  let n = Math.round(Math.random() * 66)    //随机数字
+  
+  second.innerText = m
+  
+  branch.innerText = m1
+  
+  Hour.innerText =  s
+  
+  day.innerText = t
+  
+  year.innerText = n
+  
+  
+  setInterval(function(){
+      m -= 1
+      second.innerText = m
+      
+      if(m == 0){
+        m = 60
+        分()
+        }
+      
+      },1000)
+    
+  function 分(){
+     m1 -= 1
+     branch.innerText = m1
+        
+     if(m1 == 0){
+      m1 = 59
+      时()
+       }
+        
+     }
+      
+  function 时(){
+      s -= 1
+      Hour.innerText = s
+         
+      if (s == 0){
+        s = 23
+        天()
+        }
+         
+      }
+       
+  function 天(){
+      t -= 1
+      day.innerText = t
+         
+      if(t == 0){
+        t = 364
+        年()
+        }
+         
+      }
+      
+   function 年(){
+       n -= 1
+       year.innerText = n
+          
+       if(n == 0){
+         alert("今天就是你的死期\n哈哈哈(●°u°●)​ 」")
+        }
+           
+       }
+  
+  </script>
+ </body>
+</html>
